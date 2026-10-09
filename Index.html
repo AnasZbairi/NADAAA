@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NADAAAAAA ❤️</title>
+ 
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+ 
+body{
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ffdee9,#b5fffc);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+ 
+.page{
+text-align:center;
+}
+ 
+.hidden{
+display:none;
+}
+ 
+h1{
+color:#ff2e63;
+margin-bottom:30px;
+font-size:3rem;
+}
+ 
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:10px;
+transition:0.2s;
+}
+ 
+#oui{
+background:#4CAF50;
+color:white;
+}
+ 
+#oui:hover{
+transform:scale(1.1);
+}
+ 
+#non{
+background:#ff3b3b;
+color:white;
+position:absolute;
+}
+ 
+.clickable{
+cursor:pointer;
+transition:0.3s;
+}
+ 
+.clickable:hover{
+transform:scale(1.1);
+}
+ 
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.15);
+}
+ 
+.prix{
+font-size:1.4rem;
+line-height:2;
+}
+</style>
+</head>
+<body>
+ 
+<!-- PAGE 1 -->
+<div id="page1" class="page">
+<div class="card">
+<h1>NADAAAAAA nkharjo 😍</h1>
+ 
+<button id="oui">OUI</button>
+<button id="non">NON</button>
+</div>
+</div>
+ 
+<!-- PAGE 2 -->
+<div id="page2" class="page hidden">
+<div class="card">
+<h1 id="sure1" class="clickable">SÛR 🤍</h1>
+<p>(Clique dessus)</p>
+</div>
+</div>
+ 
+<!-- PAGE 3 -->
+<div id="page3" class="page hidden">
+<div class="card">
+<h1 id="sure2" class="clickable">SÛR 🤍 🥹</h1>
+<p>(Encore une fois 😄)</p>
+</div>
+</div>
+ 
+<!-- PAGE 4 -->
+<div id="page4" class="page hidden">
+<div class="card">
+<h1>Ewa khalsini 💸</h1>
+ 
+<div class="prix">
+🚶 Balade à pieds : <b>100 DH</b><br>
+☕ Balade à pieds avec café : <b>200 DH</b><br>
+🚕 Taxi : <b>150 DH supplément</b><br>
+🍔 Manger : <b>1100 DH</b>
+</div>
+</div>
+</div>
+ 
+<script>
+const nonBtn = document.getElementById("non");
+ 
+function bougerNon(){
+const largeur = window.innerWidth - nonBtn.offsetWidth;
+const hauteur = window.innerHeight - nonBtn.offsetHeight;
+ 
+const x = Math.random() * largeur;
+const y = Math.random() * hauteur;
+ 
+nonBtn.style.left = x + "px";
+nonBtn.style.top = y + "px";
+}
+ 
+nonBtn.addEventListener("mouseenter", bougerNon);
+nonBtn.addEventListener("click", bougerNon);
+ 
+document.getElementById("oui").onclick = function(){
+document.getElementById("page1").classList.add("hidden");
+document.getElementById("page2").classList.remove("hidden");
+};
+ 
+document.getElementById("sure1").onclick = function(){
+document.getElementById("page2").classList.add("hidden");
+document.getElementById("page3").classList.remove("hidden");
+};
+ 
+document.getElementById("sure2").onclick = function(){
+document.getElementById("page3").classList.add("hidden");
+document.getElementById("page4").classList.remove("hidden");
+};
+ 
+bougerNon();
+</script>
+ 
+</body>
+</html>
